@@ -19,6 +19,37 @@
     <h1>
         Início
     </h1>
+
+    <section>
+        <?php
+            $stmt = $pdo->prepare ("SELECT  f.idFilme,
+                                            f.filme,
+                                            f.idGenero,
+                                            g.genero
+                                            From tbfilme f
+            inner join tbGenero g
+            on f.Genero = g.idGenero limit 3");
+            $stmt ->execute();
+
+            while($row = $stmt ->fetch(PDO::FETCH_BOTH)){      
+
+        ?>
+            <figure style="float:left;">
+            <figcaption>        
+                    <h1> <?php echo $row[1] ?> </h1>   
+                    <h2> Duração </h2>   
+                    <h3> Descrição </h3>   
+                    <p> <?php echo $row[3] ?> </p>   
+                </figcaption>
+            </figure>
+
+        <?php }	?>
+
+        <selection>
+                
+        <section>
+
+    </section>
     
 </body>
 </html>

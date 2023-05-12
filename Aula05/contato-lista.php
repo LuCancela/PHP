@@ -25,6 +25,38 @@
 </head>
 <body>
 
+<section>
+    <!-- Pegeui do contato e fiz algumas alterações para que fosse possível listar, remover e alterar no banco sem entrar no banco-->
+    <form action="contato-alterar.php" method="post">      
+        <div>
+          <input type="hidden" name="txIdContato" value="<?php echo @$_GET['id']; ?>" />
+        </div>		
+
+        <div>
+            <input type="text" placeholder="Nome" name="txNome" value="<?php echo @$_GET['nome']; ?>" />
+        </div>		
+
+        <div>
+            <input type="text" placeholder="E-mail" name="txEmail" value="<?php echo @$_GET['email']; ?>" />
+        </div>		
+
+        <div>
+            <input type="text" placeholder="Assunto" name="txAssunto" value="<?php echo @$_GET['assunto']; ?>" />
+        </div>		
+
+        <div>
+            <textarea placeholder="Mensagem" name="txMensagem" >
+              <?php echo @$_GET['msg']; ?>  
+            </textarea>
+        </div>
+
+        <div>
+            <input type="submit" value="Salvar" />
+        </div>
+    </form>
+
+    </section>
+
     <section>
         <table class="table-striped">
             <thead>
@@ -49,7 +81,11 @@
                         echo "<td> $row[1] </td>";						
                         echo "<td> $row[2] </td>";						
                         echo "<td> $row[3] </td>";											
-                        echo "<td> $row[4] </td>";					
+                        echo "<td> $row[4] </td>";		
+                        echo "<td>
+                            <a href'contato-editar.php?id=$row[0]&nome=$row[1]&email=$row[2]&assunto=$row[3]&mensagem=$row[4]'> Editar </a>
+                            <a href='contato-remover.php?id=$row[0]'> Remover </a>
+                            <td> ";		
                     echo "</tr>";
                 }	
                 ?>
