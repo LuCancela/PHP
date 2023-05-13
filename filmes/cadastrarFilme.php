@@ -1,19 +1,8 @@
 <?php include('cabecalho.php') ?>
 
-<header>
-    <nav>
-        <div>
-            <h1><img src="./images/bllbranco.png" alt=""></h1>
-        </div>
 
-        <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="#">Cartaz</a></li>
-            <li><a href="#">Gêneros</a></li>
-            <li><a href="cadastrarFilme.php">Cadastrar filme</a></li>
-        </ul>
-    </nav>
-</header>
+
+
 
 <form action="filme-salvar.php" class="container formulario" method="POST">
     <h1>Formulário para cadastro de filmes</h1>
