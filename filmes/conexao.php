@@ -1,4 +1,5 @@
 <?php 
+    session_start();
 
     $servidor = "localhost";
     $banco="projetofilmes";
@@ -7,5 +8,6 @@
 
     $pdo = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha);
 
+    
 
 ?>

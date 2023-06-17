@@ -1,6 +1,6 @@
-<?php include('conexao.php') ?>
+<?php include("conexao.php"); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,33 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="gerenciar.php">Gerenciar</a></button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="login.php">Login</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="cadastro_use.php">Cadastrar usuário</a></button>
+            </li>
+            
+
+            <?php 
+            
+            if (empty($_SESSION["id"])) { // verifica se o id não está nulo e se não estiver executa o código               
+                echo "Não tem ninguem logado";
+            } else {
+                $id = $_SESSION["id"];
+                $stmt = $pdo->prepare("select * from cadastro_use where id = $id");
+                $stmt->execute();
+    
+                $row = $stmt->fetch(PDO::FETCH_BOTH);
+                echo "Bem vindo " . $row['nome'];
+            }
+            
+            ?>
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="logout.php">Sair</a></button>
+            </li>
+
         </ul>
     </nav>
 </header>
