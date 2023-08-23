@@ -27,7 +27,7 @@
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="genero.php">Professores</a></button>
             </li> 
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="cadastrarFilme.php">Cadastrar Aula</a></button>
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="cadastroAula.php">Cadastrar Aula</a></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a href="login.php">Login</a></button>
@@ -39,11 +39,11 @@
 
             <?php 
             
-            if (empty($_SESSION["id"])) { // verifica se o id não está nulo e se não estiver executa o código               
+            if (empty($_SESSION["professor"])) { // verifica se o id não está nulo e se não estiver executa o código               
                 echo "Não tem ninguem logado";
             } else {
-                $id = $_SESSION["id"];
-                $stmt = $pdo->prepare("select * from professor where id = $id");
+                $id = $_SESSION["professor"];
+                $stmt = $pdo->prepare("select * from professor where idProfessor = $id");
                 $stmt->execute();
     
           

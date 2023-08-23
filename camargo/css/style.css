@@ -68,7 +68,7 @@ header nav img {
 .pets .h1 {
     font-size: 4rem;
     text-decoration: underline;
-    color: #ffffff;
+    color: #000000;
 }
 
 
@@ -154,10 +154,10 @@ header nav img {
 }
 
 
-.pet .descricao {
-    position: relative;
-    padding: 50px 20px;
-    color: #fff;
+.descricao {
+    color:#fff;
+    padding: 30px 20px;
+    background-color: #000000;
     text-align: left;
     transition: 1s;
 }

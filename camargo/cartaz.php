@@ -4,27 +4,27 @@
 
 
 <div class="pets">
-            <h2 class="h1 text-center my-5">Veja as aulas <strong>Cartaz</strong></h2>
+            <h2 class="h1 text-center my-5">Veja as <strong>Aulas</strong></h2>
             <div class="lista-de-imagens row">              
                 <?php
-                        $stmt = $pdo->prepare("select * from filmes");
+                        $stmt = $pdo->prepare("select * from aula");
                         $stmt->execute();
 
                         while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
 
                             echo "
-                                    <div class='pet col-xl-3 col-md-5' style='--imagem-fundo: url(" . "../images/" . "$row[imagemFilme]" . ");'>
-                                    <div class='preto'></div>
+                                   
+                                   
                                     <div class='descricao'>
-                                        <h2>$row[nomeFilme] </h2>
-                                        <h5><a href='genero.php'>Genero:</a></h5>
-                                        <h3> $row[idGenero]</h3>
                                         <div class='oculto'>
-                                            <h4>Diretor: $row[diretor]<br>
-                                                Ano: $row[anoFilme]</h4>
-                                                <p>$row[descricao]</p>
-                                                <h4><a href='$row[linkTrailer]' target='_blank'>Ver o trailer</a></h4>
+                                        <h2>$row[idAula] </h2>
                                         </div>
+                                        <h5><a href='genero.php'>Aula:</a></h5>
+                                        <h3> $row[aula]</h3>
+                                            <h4>Aula: $row[aula]<br>
+                                                Conteudo: $row[conteudo]
+                                                <p>$row[professor]</p>
+                                                <p>$row[data]</p></h4>
                                     </div>
                                 </div>
                                     ";

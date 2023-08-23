@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `projetofilmes`
+-- Banco de dados: `camargo`
 --
 
 -- --------------------------------------------------------
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `aula` (
   `periodo` varchar(255) DEFAULT NULL,
   `professor` varchar(255) DEFAULT NULL,
   `data` varchar(253) DEFAULT NULL,
-  PRIMARY KEY (`idProfessor`)
+  PRIMARY KEY (`idAula`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

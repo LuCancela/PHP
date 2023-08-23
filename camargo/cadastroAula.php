@@ -20,15 +20,15 @@
     </div>
     <div class="row">
         <div class="mb-3 col-4">
-            <label for="ano" class="form-label"></label>
+            <label for="ano" class="form-label">Ano da aula</label>
             <input type="number" class="form-control" id="ano" placeholder="Ex: 2020" name="ano">
         </div>
         <div class="mb-3 col-4">
             <label for="diretor" class="form-label">Professor</label>
-            <input type="text" class="form-control" id="diretor" placeholder="Ex: Zack Snyder" name="diretor">
+            <input type="text" class="form-control" id="diretor" placeholder="Ex: Jorge Junior" name="diretor">
         </div>
         <div class="mb-3 col-4">
-            <label for="genero" class="form-label">Data</label>
+            <label for="genero" class="form-label">Aulas</label>
             <select name="genero" id="" class="form-control">
                 <?php
 
